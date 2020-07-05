@@ -48,9 +48,10 @@ apt-get install $APTOPTS make g++ \
   xz-utils
 echo
 
-echo Installing dependencies for compiling with LLVM / Clang...
-apt-get install $APTOPTS llvm clang libc++-dev
-echo
+# Omit unnecessary Clang dependencies
+# echo Installing dependencies for compiling with LLVM / Clang...
+# apt-get install $APTOPTS llvm clang libc++-dev
+# echo
 
 echo Installing dependencies for compiling targets which need libinput or GBM...
 apt-get install $APTOPTS libinput-dev libgbm-dev
@@ -60,13 +61,15 @@ echo Installing dependencies for ARM Linux targets...
 apt-get install $APTOPTS g++-arm-linux-gnueabihf
 echo
 
-echo Installing PC/WIN64 dependencies...
-apt-get install $APTOPTS g++-mingw-w64
-echo
+# Omit unnecessary Windows dependencies
+# echo Installing PC/WIN64 dependencies...
+# apt-get install $APTOPTS g++-mingw-w64
+# echo
 
-echo Installing dependencies for the Android target, not including SDK / NDK...
-apt-get install $APTOPTS openjdk-8-jdk-headless vorbis-tools adb libtool unzip
-echo
+# Omit unnecessary Android dependencies
+# echo Installing dependencies for the Android target, not including SDK / NDK...
+# apt-get install $APTOPTS openjdk-8-jdk-headless vorbis-tools adb libtool unzip
+# echo
 
 echo Clean up downloaded resources in order to free space
 apt-get clean
