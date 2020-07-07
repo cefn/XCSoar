@@ -53,6 +53,8 @@ MapWindow::DrawCompass(Canvas &canvas, const PixelRect &rc) const
 void
 MapWindow::DrawBestCruiseTrack(Canvas &canvas, const RasterPoint aircraft_pos) const
 {
+  return ;
+
   if (Basic().location_available)
     BestCruiseArrowRenderer::Draw(canvas, look.task,
                                   render_projection.GetScreenAngle(),
@@ -62,6 +64,7 @@ MapWindow::DrawBestCruiseTrack(Canvas &canvas, const RasterPoint aircraft_pos) c
 void
 MapWindow::DrawTrackBearing(Canvas &canvas, const RasterPoint aircraft_pos, bool circling) const
 {
+  return ;
   if (!Basic().location_available)
     return;
 

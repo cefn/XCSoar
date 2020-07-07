@@ -55,6 +55,25 @@ GetVario2Color(short ramp_h) {
 }
 
 static RGB8Color
+GetVario3Color(short ramp_h) {
+  static constexpr ColorRamp snail_colors_vario3[] = {
+    {0, 0xff, 0xff, 0xff},
+    {33, 0xe8, 0xe8, 0xe8},
+    {66, 0xd0, 0xd0, 0xd0},
+    {100, 0xc0, 0xc0, 0xc0},
+    {120, 0x99, 0x99, 0x99},
+    {140, 0x72, 0x72, 0x72},
+    {160, 0x4b, 0x4b, 0x4b},
+    {180, 0x24, 0x24, 0x24},
+    {200, 0x0, 0x0, 0x0}
+  };
+
+  return ColorRampLookup(ramp_h, snail_colors_vario3,
+                         ARRAY_SIZE(snail_colors_vario3));
+}
+
+
+static RGB8Color
 GetAltitudeColor(short ramp_h) {
   static constexpr ColorRamp snail_colors_alt[] = {
     {0,   0xff, 0x00, 0x00},
@@ -79,6 +98,8 @@ GetPortableColor(TrailSettings::Type type, short ramp_h)
   case TrailSettings::Type::VARIO_2_DOTS:
   case TrailSettings::Type::VARIO_DOTS_AND_LINES:
     return GetVario2Color(ramp_h);
+  case TrailSettings::Type::VARIO_3:
+    return GetVario3Color(ramp_h);
   default:
     return GetVario1Color(ramp_h);
   }
@@ -95,7 +116,7 @@ void
 TrailLook::Initialise(const TrailSettings &settings)
 {
   UPixelScalar iwidth;
-  UPixelScalar minwidth = Layout::ScalePenWidth(2);
+  UPixelScalar minwidth = Layout::ScalePenWidth(8);
 
   for (unsigned i = 0; i < NUMSNAILCOLORS; ++i) {
     short ih = i * 200 / (NUMSNAILCOLORS - 1);

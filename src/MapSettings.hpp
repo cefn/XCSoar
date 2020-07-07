@@ -93,6 +93,7 @@ struct TrailSettings {
   enum class Type: uint8_t {
     VARIO_1,
     VARIO_2,
+    VARIO_3,
     ALTITUDE,
     VARIO_1_DOTS,
     VARIO_2_DOTS,

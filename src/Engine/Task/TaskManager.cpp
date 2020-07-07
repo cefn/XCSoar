@@ -292,7 +292,10 @@ TaskManager::Update(const AircraftState &state,
   // and tell it where the task destination is (if any)
   const GeoPoint *destination = &state.location;
 
-  if (task_behaviour.abort_task_mode == AbortTaskMode::HOME) {
+  if (task_behaviour.abort_task_mode == AbortTaskMode::NONE) {
+    const GeoPoint nowhere = GeoPoint::Invalid();
+    destination = &nowhere;
+  } else if (task_behaviour.abort_task_mode == AbortTaskMode::HOME) {
     const Waypoint *home = abort_task->GetHome();
     if (home)
       destination = &home->location;
@@ -301,7 +304,7 @@ TaskManager::Update(const AircraftState &state,
       ordered_task->GetActiveTaskPoint();
     if (twp)
       destination = &(twp->GetLocationRemaining());
-  }
+  } 
 
   abort_task->SetTaskDestination(*destination);
 

@@ -81,6 +81,8 @@ SafetyFactorsConfigPanel::Prepare(ContainerWindow &parent, const PixelRect &rc)
       N_("The sorting will also take the current task direction into account.") },
     { (unsigned)AbortTaskMode::HOME, N_("Home"),
       N_("The sorting will try to find landing options in the current direction to the configured home waypoint.") },
+    { (unsigned)AbortTaskMode::NONE, N_("None"),
+      N_("No landing option targets will be shown") },
     { 0 }
   };
 

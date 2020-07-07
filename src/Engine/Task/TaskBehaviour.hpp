@@ -37,6 +37,7 @@ enum class AbortTaskMode: uint8_t {
   SIMPLE,
   TASK,
   HOME,
+  NONE,
 };
 
 /**
@@ -137,6 +138,7 @@ struct TaskBehaviour {
    * AbortTaskMode::SIMPLE: sort only by arrival height and wp type
    * AbortTaskMode::TASK: sort also by deflection from current turnpoint
    * AbortTaskMode::HOME: sort also by deflection from home
+   * AbortTaskMode::NONE: no target
    */
   AbortTaskMode abort_task_mode;
 

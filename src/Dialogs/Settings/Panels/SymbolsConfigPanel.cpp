@@ -103,6 +103,7 @@ static constexpr StaticEnumChoice trail_type_list[] = {
   { (unsigned)TrailSettings::Type::VARIO_2, N_("Vario #2"), N_("The climb colour "
     "for this scheme is orange to red, sinking is displayed as light blue to dark blue. "
     "Zero lift is presented as a yellow line.") },
+  { (unsigned)TrailSettings::Type::VARIO_3, N_("Vario #3"), N_("Black (lift) to white (sink)") },
   { (unsigned)TrailSettings::Type::VARIO_2_DOTS, N_("Vario #2 (with dots)"), N_("The same "
     "colour scheme as the previous, but with dotted lines while sinking.") },
   { (unsigned)TrailSettings::Type::VARIO_DOTS_AND_LINES,

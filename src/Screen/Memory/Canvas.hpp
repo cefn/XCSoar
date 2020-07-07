@@ -218,7 +218,7 @@ public:
   }
 
   void ClearWhite() {
-    Clear(COLOR_WHITE);
+    Clear(COLOR_LIGHT_GRAY);
   }
 
   void DrawRoundRectangle(int left, int top, int right, int bottom,
