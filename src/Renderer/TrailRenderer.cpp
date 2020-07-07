@@ -169,7 +169,8 @@ TrailRenderer::Draw(Canvas &canvas, const TraceComputer &trace_computer,
         if (negative(it->GetVario()) &&
             (settings.type == TrailSettings::Type::VARIO_1_DOTS ||
              settings.type == TrailSettings::Type::VARIO_2_DOTS ||
-             settings.type == TrailSettings::Type::VARIO_DOTS_AND_LINES)) {
+             settings.type == TrailSettings::Type::VARIO_DOTS_AND_LINES ||
+             settings.type == TrailSettings::Type::VARIO_3)) {
           canvas.SelectNullPen();
           canvas.Select(look.trail_brushes[color_index]);
           canvas.DrawCircle((pt.x + last_point.x) / 2, (pt.y + last_point.y) / 2,
@@ -177,7 +178,8 @@ TrailRenderer::Draw(Canvas &canvas, const TraceComputer &trace_computer,
         } else {
           // positive vario case
 
-          if (settings.type == TrailSettings::Type::VARIO_DOTS_AND_LINES) {
+          if (settings.type == TrailSettings::Type::VARIO_DOTS_AND_LINES ||
+            settings.type == TrailSettings::Type::VARIO_3) {
             canvas.Select(look.trail_brushes[color_index]);
             canvas.Select(look.trail_pens[color_index]); //fixed-width pen
             canvas.DrawCircle((pt.x + last_point.x) / 2, (pt.y + last_point.y) / 2,

@@ -51,6 +51,8 @@ BestCruiseArrowRenderer::Draw(Canvas &canvas, const TaskLook &look,
                               const Angle screen_angle, const RasterPoint pos,
                               const DerivedInfo &calculated)
 {
+  return;
+  
   if (calculated.turn_mode == CirclingMode::CLIMB ||
       !calculated.task_stats.task_valid)
     return;

@@ -58,6 +58,8 @@ TrackLineRenderer::Draw(Canvas &canvas,
                         const MapSettings &settings,
                         bool wind_relative)
 {
+  return;
+
   if (!basic.track_available || !basic.attitude.IsHeadingUseable())
     return;
 
@@ -86,6 +88,7 @@ TrackLineRenderer::DrawProjected(Canvas &canvas,
                                  const MapSettings &settings,
                                  bool wind_relative)
 {
+  return;
   // projection.GetMapScale() <= fixed(6000);
 
   GeoPoint traildrift;

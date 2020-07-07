@@ -38,6 +38,9 @@ Copyright_License {
 void
 MapWindow::DrawTask(Canvas &canvas)
 {
+  //CH This seems to remove the task arrow and dotted line
+  return; 
+
   if (task == nullptr)
     return;
 
