@@ -117,7 +117,7 @@ void
 TrailLook::Initialise(const TrailSettings &settings)
 {
   UPixelScalar iwidth;
-  UPixelScalar minwidth = Layout::ScalePenWidth(8);
+  UPixelScalar minwidth = Layout::ScalePenWidth(3);
 
   for (unsigned i = 0; i < NUMSNAILCOLORS; ++i) {
     short ih = i * 200 / (NUMSNAILCOLORS - 1);
@@ -133,9 +133,9 @@ TrailLook::Initialise(const TrailSettings &settings)
 
     trail_widths[i] = iwidth;
     trail_brushes[i].Create(color);
-    trail_pens[i].Create(minwidth, color);
+    trail_pens[i].Create(iwidth, color);
     scaled_trail_pens[i].Create(iwidth, color);
   }
 
-  trace_pen.Create(2, Color(50, 243, 45));
+  trace_pen.Create(iwidth, Color(50, 243, 45));
 }
