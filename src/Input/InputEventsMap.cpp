@@ -215,7 +215,7 @@ InputEvents::sub_SetZoom(fixed value)
     Message::AddMessage(_("Auto. zoom off"));
   }
 
-  fixed vmin = CommonInterface::GetComputerSettings().polar.glide_polar_task.GetVMin();
+  fixed vmin = CommonInterface::GetComputerSettings().polar.glide_polar_task.GetVMin() / 4;
   fixed scale_2min_distance = vmin * 12;
   const fixed scale_100m = fixed(10);
   const fixed scale_1600km = fixed(1600*100);
